@@ -1,26 +1,34 @@
-import React from 'react';
-import logo from './logo.svg';
+import React, {ChangeEventHandler,  useState} from 'react';
 import './App.css';
+import useSearch from "./api/useSearch";
 
 function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+
+    // TODO Gestion controllé state associé au champ de recherche
+    const [search, setSearch] = useState<string | undefined>(undefined)
+
+    // TODO Initialisation du Hook
+    const url = useSearch(search)
+
+    const handleOnChange: ChangeEventHandler<HTMLInputElement> = (event) => {
+        // TODO Gestion controllé de l'événement de saisie de l'input
+        setSearch(event.target.value)
+    }
+
+    return (
+        <div className="App">
+            <main>
+                {/*TODO formulaire de recherche de Gifs */}
+                <form>
+                    <label htmlFor="search">Champ de saisie:</label>
+                    <input alt="image giphy" type="text" id="search" name="search" onChange={handleOnChange} required/>
+                </form>
+                <div>
+                    {url && <img src={url}/>}
+                </div>
+            </main>
+        </div>
+    );
 }
 
 export default App;
