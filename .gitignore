@@ -18,6 +18,22 @@
 .env.test.local
 .env.production.local
 
+# IDE
+.project
+org.eclipse.buildship.core.prefs
+#!/.idea/codeStyles/
+*.iml
+.vscode/*
+!.vscode/launch.json
+.idea
+
+# Logs
+*.log
 npm-debug.log*
 yarn-debug.log*
 yarn-error.log*
+
+# Runtime data
+*.pid
+*.seed
+*.pid.lock
