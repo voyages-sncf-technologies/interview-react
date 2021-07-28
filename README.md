@@ -2,7 +2,8 @@
 
 ## API GLiphy
 
-Voici l'url à appeler : https://api.giphy.com/v1/gifs/search?api_key=af1hnh8Res7tM5qpGOTgp2wNex8RWnCu&q=bob
+Voici l'url à appeler pour la recherche : https://api.giphy.com/v1/gifs/search?api_key=${apikey}&q=${champ_saisie}
+Voicir l'url à appeler pour l'initialisation :   https://api.giphy.com/v1/gifs/trending?api_key=${apikey}
 
 ###Query parameters : 
 
